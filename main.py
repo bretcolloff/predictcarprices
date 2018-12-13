@@ -10,6 +10,7 @@ from sklearn.model_selection import KFold
 # load dataset
 dataframe = pandas.read_csv("data/Car_sales.csv")
 dataset = dataframe.values
+
 # split into input (X) and output (Y) variables
 prices = []
 features = []
@@ -90,7 +91,6 @@ def baseline_model():
     model = Sequential()
     model.add(Dense(13, input_dim=len(features[0]), kernel_initializer='normal', activation='relu'))
     model.add(Dense(1, kernel_initializer='normal'))
-    # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 
